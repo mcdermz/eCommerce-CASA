@@ -9,5 +9,7 @@ $('form').on('submit', function(e){
 
   if ($('#zipCode-ship').val().length !== 5 && $('#zipCode-ship').val().length !== 9){
     $('.zip').addClass('has-error');
+  }else if($('#zipCode-ship').val().length === 5 || $('#zipCode-ship').val().length === 9){
+    $('.zip').removeClass('has-error');
   }
 });
