@@ -1,8 +1,15 @@
 console.log('sanity!!!!!');
 
-$('billingAddressButton').on('submit', function(e){
+// on form submit
+// if zip code length !== 5 || 9
+// then log'error'
+
+$('form').on('submit', function(e){
   e.preventDefault();
-    if($('#addressLine1').val().length === ''){
-      $('#addressLineWrapper').addClass('has-error');
-    }
+
+  if ($('#zipCode-ship').val().length !== 5 && $('#zipCode-ship').val().length !== 9){
+    $('.zip').addClass('has-error');
+  }else if($('#zipCode-ship').val().length === 5 || $('#zipCode-ship').val().length === 9){
+    $('.zip').removeClass('has-error');
+  }
 });
