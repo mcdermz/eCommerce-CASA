@@ -105,12 +105,10 @@ for (var i = 0; i < arrOfCol.length; i++) {
     html += divClose
     if (i !== arrOfCol.length - 1) {
       html += rowOpen
-    } else if (i === arrOfCol.length - 1) {
+    } else {
     html += divClose
     }
   }
 }
-
-// console.log(html);
 
  $('.container').append(html)
