@@ -4,7 +4,7 @@ console.log('sanity!!!!!');
 // if zip code length !== 5 || 9
 // then log'error'
 
-$('form').on('submit', function(e){
+$('form.shipping').on('submit', function(e){
   e.preventDefault();
 
   if ($('#zipCode-ship').val().length !== 5 && $('#zipCode-ship').val().length !== 9){
@@ -14,7 +14,7 @@ $('form').on('submit', function(e){
   }
 });
 
-$('form').on('submit', function(e){
+$('form.billing').on('submit', function(e){
   e.preventDefault();
 
   if ($('#zipCode-bill').val().length !== 5 && $('#zipCode-bill').val().length !== 9){
