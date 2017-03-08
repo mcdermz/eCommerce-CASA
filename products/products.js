@@ -1,5 +1,3 @@
-console.log('sanity!!!!!');
-
 
 var products = [{
         "id": 1,
@@ -86,42 +84,33 @@ var products = [{
     }
 ]
 
-console.log(products[11].id);
 
+var picture = `<img src="http://fillmurray.com/300/300" alt="Mother-F*ckin' Bill Murray!">`
+var rowOpen = `<div class="row">`
+var colOpen = `<div class="col-xs-4">`
+var divClose = `</div>`
+var br = `</br>`
 
-function oneProduct(i) {
-    var $col = $(`<div class="col-xs-4"></div>`)
-    $('.row').append($col)
-
-    $col.append(`<img src="http://fillmurray.com/300/300" alt="Mother-F*ckin' Bill Murray!">`)
-        .append(`<p>Id: ${products[i].id}</p>`)
-        .append(`<p>Size: ${products[i].size}</p>`)
-        .append(`<p>Price: ${products[i].price}</p>`)
-        .append(`<p>Description: ${products[i].description}</p>`)
-        .append(`</br>`)
-
+var arrOfCol = []
+for (var i = 0; i < products.length; i++) {
+    arrOfCol.push(colOpen + br + picture + `<p>Id: ${products[i].id}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
 }
 
+var html = rowOpen
+for (var i = 0; i < arrOfCol.length; i++) {
+  var col = arrOfCol[i]
+  html += col
 
-function productList() {
-    var numOfCol = 1;
-    $('.container').append(`<div class="row"></div>`)
-
-    for (var i = 0; i < products.length; i++) {
-        if (numOfCol % 3 !== 0) {
-
-            for (var j = 0; j < products.length; j++) {
-                oneProduct(j)
-            }
-            numOfCol++;
-        } else {
-            var $row = $(`<div class="row"></div>`)
-            $('.container').append($row)
-            numOfCol++
-        }
-
+  if (i % 3 === 2) {
+    html += divClose
+    if (i !== arrOfCol.length - 1) {
+      html += rowOpen
+    } else if (i === arrOfCol.length - 1) {
+    html += divClose
     }
-
+  }
 }
 
-productList()
+// console.log(html);
+
+ $('.container').append(html)
