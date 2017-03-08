@@ -8,6 +8,8 @@
 
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="checkout.css">
+
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -110,61 +112,61 @@
     <div class="row addressRow">
       <div class="col-sm-5 col-sm-offset-1">
         <div class="panel panel-default">
-          <div class="panel-heading">Billing Address</div>
+          <div class="panel-heading">Shipping Address</div>
           <div class="panel-body">
 
 
-            <form class="form-horizontal">
+            <form class="form-horizontal shipping">
               <fieldset>
                 <!-- <legend>Legend</legend> -->
 
                 <div class="form-group">
-                  <label for="firstName" class="col-lg-2 control-label">First Name</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="firstName" placeholder="First Name">
+                  <label for="firstName-ship" class="col-sm-2 control-label">First Name</label>
+                  <div class="col-sm-10">
+                    <input id="firstName-ship" type="text" class="form-control input-sm firstName" placeholder="First Name" required>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="lastName" class="col-lg-2 control-label">Last Name</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="lastName" placeholder="Last Name">
+                  <label for="lastName-ship" class="col-sm-2 control-label">Last Name</label>
+                  <div class="col-sm-10">
+                    <input id="lastName-ship" type="text" class="form-control input-sm" placeholder="Last Name" required>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="company" class="col-lg-2 control-label">Company</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="company" placeholder="Company">
-                  </div>
-                </div>
-
-                <div id="addressLine1Wrapper" class="form-group">
-                  <label for="addressLine1" class="col-lg-2 control-label">Address</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="addressLine1" placeholder="Address" required>
+                  <label for="company-ship" class="col-sm-2 control-label">Company</label>
+                  <div class="col-sm-10">
+                    <input id="company-ship" type="text" class="form-control input-sm" placeholder="Company">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="addressLine2" class="col-lg-2 control-label"></label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="addressLine2">
+                  <label for="addressLine1-ship" class="col-sm-2 control-label">Address</label>
+                  <div class="col-sm-10">
+                    <input id="addressLine1-ship" type="text" class="form-control input-sm" placeholder="Address" required>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="city" class="col-lg-2 control-label">City</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="city">
+                  <label for="addressLine2-ship" class="col-sm-2 control-label"></label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" id="addressLine2-ship">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="state" class="col-lg-2 control-label">State</label>
-                  <div class="col-lg-10">
-                    <select class="form-control input-sm" id="state">
-                      <option value="state">State</option>
+                  <label for="city-ship" class="col-sm-2 control-label">City</label>
+                  <div class="col-sm-10">
+                    <input id="city-ship" type="text" class="form-control input-sm" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="state-ship" class="col-sm-2 control-label">State</label>
+                  <div class="col-sm-10">
+                    <select id="state-ship" class="form-control input-sm" required>
+                      <option value="" disabled selected>Select a State</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -221,31 +223,29 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="zipCode" class="col-lg-2 control-label">Zip</label>
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-sm" id="zipCode" placeholder="Zip Code">
+                  <label for="zipCode-ship" class="col-sm-2 control-label">Zip</label>
+                  <div class="col-sm-10">
+                    <input id="zipCode-ship" type="number" class="form-control input-sm no-spinner"  placeholder="Zip Code">
                   </div>
                 </div>
 
-                <button id="billingAddressButton" type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </fieldset>
             </form>
 
           </div>
 
         </div>
+        <div class="col-sm-5">
+
+        </div>
+
       </div>
     </div>
-    <!-- ========= End Shipping Address =========== -->
-    <div class="col-sm-5">
-      billing
-    </div>
 
   </div>
 
-  <div class="col-sm-5">
-    billing
-  </div>
+
 
 
   <div class="container">
