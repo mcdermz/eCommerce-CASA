@@ -14,12 +14,12 @@ $('form').on('submit', function(e){
   }
 });
 
-// $('form').on('submit', function(e){
-//   e.preventDefault();
-//
-//   if ($('#zipCode-bill').val().length !== 5 && $('#zipCode-bill').val().length !== 9){
-//     $('.zip').addClass('has-error');
-//   }else if($('#zipCode-bill').val().length === 5 || $('#zipCode-bill').val().length === 9){
-//     $('.zip').removeClass('has-error');
-//   }
-// });
+$('form').on('submit', function(e){
+  e.preventDefault();
+
+  if ($('#zipCode-bill').val().length !== 5 && $('#zipCode-bill').val().length !== 9){
+    $('.zip-bill').addClass('has-error');
+  }else if($('#zipCode-bill').val().length === 5 || $('#zipCode-bill').val().length === 9){
+    $('.zip-bill').removeClass('has-error');
+  }
+});
