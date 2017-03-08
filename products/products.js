@@ -60,26 +60,43 @@ var products = [
 {"id":12,
 "size":3,
 "price":"$82.20",
-"description":"Dreamcatcher gastropub cronut keytar. Next level kogi blog hella. DIY umami messenger bag, intelligentsia wolf paleo tumblr brooklyn hella. Tilde cred organic, brooklyn tousled tumblr pinterest."},
+"description":"Dreamcatcher gastropub cronut keytar. Next level kogi blog hella. DIY umami messenger bag, intelligentsia wolf paleo tumblr brooklyn hella. Tilde cred organic, brooklyn tousled tumblr pinterest."}
 ]
 
 console.log(products[11].id);
-
-// (function productList() {
-
 //loop through and create a row, create a column, then append the info to it.
-for (var i = 0; i < products.length; i++) {
-  var $appendRow = $('.container').append(`<div class="row"></div>`)
-  var $appendColumn = $('.row').append(`<div class="col-xs-4"></div>`)
-  var $column = $('.col-xs-4')
-  $column.append(`<img src="http://fillmurray.com/300/300" alt="fillMurray">`)
-  $column.append(`<p>Id: ${products[i].id}</p>`)
 
-  $column.append(`<p>Size: ${products[i].size}</p>`)
-  $column.append(`<p>Price: ${products[i].price}</p>`)
-  $column.append(`<p>Description: ${products[i].description}</p>`)
-  $column.append(`</br>`)
+
+// function $appendRow(){
+// }
+
+// function $appendColumn(){
+// }
+//
+// for (var i = 0; i < 5; i++) {
+  // $appendRow()
+// }
+
+$('.container').append(`<div class="row"></div>`)
+
+function oneProduct(i) {
+  var $col = $(`<div class="col-xs-4"></div>`)
+  $('.row').append($col)
+
+    $col.append(`<img src="http://fillmurray.com/300/300" alt="Mother Fucking Bill Murray!">`)
+    .append(`<p>Id: ${products[i].id}</p>`)
+    .append(`<p>Size: ${products[i].size}</p>`)
+    .append(`<p>Price: ${products[i].price}</p>`)
+    .append(`<p>Description: ${products[i].description}</p>`)
+    .append(`</br>`)
+
 }
 
+function productList() {
 
-// })()
+  for (var i = 0; i < products.length; i++) {
+    oneProduct(i)
+  }
+}
+
+productList()
