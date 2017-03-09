@@ -100,13 +100,13 @@ var products = [{
 //HTML VARIABLES
 var picture = `<img src="http://fillmurray.com/300/300" alt="Mother-F*ckin' Bill Murray!">`
 var rowOpen = `<div class="row">`
-var colOpen = `<div class="col-xs-4">`
 var divClose = `</div>`
 var br = `</br>`
 
 //CREATES ARRAY OF PRODUCTS; EACH ITEM IN ARRAY CONTAINS AN HTML FRIENDLY STRING OF A PRODUCT IN A COLUMN
 var arrOfCol = []
 for (var i = 0; i < products.length; i++) {
+    var colOpen = `<div data-size="${products[i].size}" class="col-xs-4">`
     arrOfCol.push(colOpen + br + picture + `<p>Price: ${products[i].price}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
 }
 
@@ -130,32 +130,21 @@ for (var i = 0; i < arrOfCol.length; i++) {
 $('#product-container').append(html)
 
 //FILTER PRODUCTS BY SIZE
+$('[name="size"]').on('click', function() {
+    var buttonVal = $(this).val()
+    $(`.col-xs-4`).hide()
+    $(`.col-xs-4[data-size="${buttonVal}"]`).show()
+
+    console.log(buttonVal);
+})
 
 
-//on click, loop through the products. If their size is the same, hide everything BUT that size.
-// $('[name="size"]')
-// function diffSizes() {
-
-        $('[name="size"]').on('click', function() {
-          var buttonVal = $(this).val()
-          var prodSize;
-
-          for (var j = 0; j < products.length; j++) {
-            console.log(buttonVal, products[j].size);
-          if (parseInt(buttonVal) === products[j].size){
-            console.log("yay");
-          }
-        }
-        //when clicked, everything but objects with size:0 disappear/ .hide()
-    })
-
-// }
 
 
-//add class to column onseleciton of button
 
 
-//if it has this size, append this to this object
+
+
 
 
 
