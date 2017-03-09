@@ -133,7 +133,7 @@ $('#product-container').append(html)
 
 
 //on click, loop through the products. If their size is the same, hide everything BUT that size.
-
+// $('[name="size"]')
 // function diffSizes() {
 
         $('[name="size"]').on('click', function() {
@@ -143,7 +143,7 @@ $('#product-container').append(html)
           for (var j = 0; j < products.length; j++) {
             console.log(buttonVal, products[j].size);
           if (parseInt(buttonVal) === products[j].size){
-            $(#).addClass()
+            console.log("yay");
           }
         }
         //when clicked, everything but objects with size:0 disappear/ .hide()
