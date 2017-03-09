@@ -50,6 +50,6 @@ $('.card-inputs').keyup(function () {
   if ($cardNum !== 16){
     $('.card-field').addClass('has-error');
   } else {
-    $('.card-field').addClass('has-success')
+    $('.card-field').addClass('has-success');
   }
 });
