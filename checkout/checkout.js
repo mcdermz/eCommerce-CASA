@@ -24,15 +24,21 @@ $('form.billing').on('submit', function(e){
 $('form.credit-card').on('submit', function(e){
   e.preventDefault();
   var $cvv = $('#cvv').val().length;
-  var $cardNum = $('#card-field-1').val().length + $('#card-field-2').val().length + $('#card-field-3').val().length + $('#card-field-4').val().length;
-  if ($cardNum !== 16){
-    $('.card-field').addClass('has-error');
-  }else if ($cvv !== 3) {
+  if ($cvv !== 3) {
     $('.cvv-field').addClass('has-error');
   }else {
     $('.credit-card').addClass('has-success');
-    // $('.card-field').addClass('has-success');
-    // alert('success!');
   }
+});
 
+$('.card-inputs').keyup(function () {
+  if ($(this).val().length === 4) {
+    $(this).next().focus();
+  }
+  var $cardNum = $('#card-field-1').val().length + $('#card-field-2').val().length + $('#card-field-3').val().length + $('#card-field-4').val().length;
+  if ($cardNum !== 16){
+    $('.card-field').addClass('has-error');
+  } else {
+    $('.card-field').addClass('has-success')
+  }
 });
