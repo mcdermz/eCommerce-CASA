@@ -1,7 +1,25 @@
+.yourPurchases{
+  background-color: #3e444c;
+}
+
+.shipping-billing{
+  margin-top: 60px;
+}
+
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+}
+
+.cvv-form{
+  text-align: right;
+}
+
+.same-as-shipping{
+  float: right;
+  font-size: 10px;
 }
