@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="../products/products.html">Products<span class="sr-only">(current)</span></a></li>
-          <li class="active"><a href="../checkout/checkout.html">Checkout</a></li>
+          <li><a href="../checkout/checkout.html">Checkout</a></li>
           <li class="dropdown">
             <a href="../products/products.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -50,9 +50,13 @@
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="3 Items" />
+              <i class="glyphicon glyphicon-shopping-cart form-control-feedback"></i>
+            </div>
+            <div class="checkout">
+            </div>
           </div>
-
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
@@ -61,6 +65,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- product checkout -->
   <div class="container">
