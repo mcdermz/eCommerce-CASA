@@ -29,3 +29,16 @@ input[type=number]::-webkit-outer-spin-button {
   width: 6.5rem;
   display: inline-block;
 }
+.panel .panel-default .credit-card {
+  margin: 1rem 17rem 1rem;
+}
+
+.credit-card select {
+  display: inline-block;
+  width: 6.5rem;
+}
+
+div.cvv-field input {
+  display: inline-block;
+  width: 5rem;
+}
