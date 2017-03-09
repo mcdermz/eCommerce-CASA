@@ -18,6 +18,7 @@
 </head>
 
 <body>
+  <!-- nav bar -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -62,8 +63,8 @@
   </nav>
 
 
+  <!-- product checkout -->
   <div class="container">
-    <!-- product checkout -->
     <div class="row">
       <div class="col-sm-12">
         <h1>Checkout</h1>
@@ -107,8 +108,9 @@
       </div>
     </div>
   </div>
+
+  <!-- shipping and billing -->
   <div class="container">
-    <!-- shipping and billing -->
     <div class="row shipping-billing">
       <div class="col-sm-5 col-sm-offset-1">
         <div class="panel panel-default">
@@ -361,12 +363,42 @@
     </div>
 
   </div>
-  <div class="container">
 
-    <div class="form-group">
-      <label for="creditCard" class="col-sm-2 control-label col-sm-offset-4">Credit Card Number</label>
-      <div class="col-sm-4">
-        <input type="number" class="form-control input-sm" id="creditCard" placeholder="Credit Card">
+  <!-- credit card -->
+  <div class="container">
+    <div class="row">
+      <div class="form-group">
+        <label for="cardholder-name" class="col-sm-2 control-label col-sm-offset-2">Cardholder's Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control input-sm" id="cardholder-name" placeholder="First and last name">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="card-number" class="col-sm-2 control-label col-sm-offset-2">Credit Card Number</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control input-sm" id="card-number" placeholder="16-digit card number">
+        </div>
+        <div class="col-sm-1">
+          <input type="text" class="form-control input-sm" id="cvv" placeholder="CVV">
+        </div>
+        <div class="col-sm-1">
+          <label for="cvv" class="control-label">CVV</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="expiry-month" class="col-sm-2 control-label col-sm-offset-2">Card Expiration Date</label>
+        <div class="col-sm-1">
+          <input type="text" class="form-control input-sm" id="expiry-month" placeholder="month">
+        </div>
+        <div class="col-sm-1">
+          <input type="text" class="form-control input-sm" id="expiry-year" placeholder="year">
+        </div>
       </div>
     </div>
 
