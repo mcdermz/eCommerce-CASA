@@ -8,3 +8,37 @@ function myMap() {
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
 }
+
+// var myInterval = setInterval(function(){
+//
+//   // console.log(new Date());
+//
+// }, 1000);
+//
+//
+// $('#slider .slides').animate({'margin-left': -720}, 1000);
+
+$(function(){
+  var $slider = $('#slider .slides');
+  var currentSlide = 1;
+
+  // var width = 720;
+  var animateSpeed = 1000;
+  var pause = 3000;
+
+  setInterval(function(){
+    $slider.animate({'margin-left': '-=1440'}, animateSpeed, function(){
+      currentSlide++;
+      if(currentSlide === $('.slide').length){
+        currentSlide = 1;
+        $slider.css('margin-left', 0);
+      }
+    });
+  }, pause);
+
+
+  //listen for mouseenter and pause
+  //resume on mouseleave
+
+
+});

@@ -18,3 +18,27 @@ iframe{
 .footer-head-color{
   color:silver;
 }
+
+#slider{
+  width: 1440px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#slider .slides{
+  display: block;
+  width: 12000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  height: 400px;
+}
+
+#slider img {
+  height: 400px;
+}
