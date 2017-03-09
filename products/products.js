@@ -1,4 +1,5 @@
-console.log('crazy');
+console.log("sanity!");
+//ARRAY OF PRODUCTS
 var products = [{
         "id": 1,
         "size": 0,
@@ -96,31 +97,67 @@ var products = [{
     }
 ]
 
-
+//HTML VARIABLES
 var picture = `<img src="http://fillmurray.com/300/300" alt="Mother-F*ckin' Bill Murray!">`
 var rowOpen = `<div class="row">`
 var colOpen = `<div class="col-xs-4">`
 var divClose = `</div>`
 var br = `</br>`
 
+//CREATES ARRAY OF PRODUCTS; EACH ITEM IN ARRAY CONTAINS AN HTML FRIENDLY STRING OF A PRODUCT IN A COLUMN
 var arrOfCol = []
 for (var i = 0; i < products.length; i++) {
-    arrOfCol.push(colOpen + br + picture + `<p>Id: ${products[i].id}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
+    arrOfCol.push(colOpen + br + picture + `<p>Price: ${products[i].price}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
 }
 
+//LOOPS THROUGH ARRAY OF COLUMNS AND ADDS THEM ONTO ROWS
 var html = rowOpen
 for (var i = 0; i < arrOfCol.length; i++) {
-  var col = arrOfCol[i]
-  html += col
+    var col = arrOfCol[i]
+    html += col
 
-  if (i % 3 === 2) {
-    html += divClose
-    if (i !== arrOfCol.length - 1) {
-      html += rowOpen
-    } else {
-    html += divClose
+    //IF ROW IS FULL (WITH 3 COLUMNS IN IT) THEN CLOSE ROW AND CREATE A NEW ONE
+    if (i % 3 === 2) {
+        html += divClose
+        if (i !== arrOfCol.length - 1) {
+            html += rowOpen
+        } else {
+            html += divClose
+        }
     }
-  }
 }
+//APPEND PRODUCTS INTO HTML
+$('#product-container').append(html)
 
- $('#product-container').append(html)
+//FILTER PRODUCTS BY SIZE
+
+
+//on click, loop through the products. If their size is the same, hide everything BUT that size.
+
+// function diffSizes() {
+
+        $('[name="size"]').on('click', function() {
+          var buttonVal = $(this).val()
+          var prodSize;
+
+          for (var j = 0; j < products.length; j++) {
+            console.log(buttonVal, products[j].size);
+          if (parseInt(buttonVal) === products[j].size){
+            $(#).addClass()
+          }
+        }
+        //when clicked, everything but objects with size:0 disappear/ .hide()
+    })
+
+// }
+
+
+//add class to column onseleciton of button
+
+
+//if it has this size, append this to this object
+
+
+
+
+//

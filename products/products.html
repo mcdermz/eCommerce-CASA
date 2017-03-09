@@ -66,13 +66,43 @@
     <div class="products-heading">
       <h1>Yummy Things To Buy!</h1>
     </div>
+<div class="row">
+  <aside class="aside">
+    <div class="col-xs-4">
+      <form class="filter" action="index.html" method="post">
+        <span>Filter by size:</span>
+        </br>
+        <label for="size0"> 0 </label>
+        <input id="size0" type="radio" name="size" value=0>
+        <label for="size1"> 1 </label>
+        <input id="size1" type="radio" name="size" value=1>
+        <label for="size2"> 2 </label>
+        <input id="size2" type="radio" name="size" value=2>
+        <label for="size3"> 3 </label>
+        <input id="size3" type="radio" name="size" value=3>
+        <label for="size4"> 4 </label>
+        <input id="size4" type="radio" name="size" value=4>
+        <label for="none"> None </label>
+        <input id="none" type="radio" name="size" value="">
+    </div>
+    </br>
 
+
+    <!-- <label for="price">Filter by prices less than</label>
+        <input id="price" type="checkbox" name="" value="">
+        <input id="price" type="price" name="price" size="6"> -->
+    <!-- maybe make it boxes for each 'less than' and whatever they check gets rid of those. -->
+
+    </form>
+  </aside>
+</div>
   </div>
   <footer class="navbar navbar-default">
     <div class="row">
       <div class="col-xs-3 map-col">
         <div class="h4 footer-head-color">Visit Us</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.3979778720613!2d-122.33599028436967!3d47.59895067918407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aa4c2d37a93%3A0xc82c719d1795d092!2sGalvanize!5e0!3m2!1sen!2sus!4v1489005724846" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.3979778720613!2d-122.33599028436967!3d47.59895067918407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aa4c2d37a93%3A0xc82c719d1795d092!2sGalvanize!5e0!3m2!1sen!2sus!4v1489005724846"
+            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         <!-- <div id="map">My map will go here</div> -->
       </div>
       <div class="col-xs-3">
@@ -85,18 +115,19 @@
               </div>
               <img class="media-object" src="http://placehold.it/250" alt="product-250-x-250" width="70px">
             </a>
-              <div class="product-detail">
-                <h5>Product Name</h5>
-              </div>
+            <div class="product-detail">
+              <h5>Product Name</h5>
+            </div>
 
-              <div><h6>This is where we put the information</h6></div>
-              </div>
+            <div>
+              <h6>This is where we put the information</h6></div>
+          </div>
 
           <div class="media">
             <div class="media-left">
               <a href="../homepage/homepage.html">
-              <div class="media-body">
-                <h4 class="media-heading">CASA</h4>
+                <div class="media-body">
+                  <h4 class="media-heading">CASA</h4>
               </a>
               </div>
               <img class="media-object" src="http://placehold.it/250" alt="product-250-x-250" width="70px">
@@ -104,7 +135,8 @@
             <div class="product-details">
               <h5>Product Name</h5>
             </div>
-            <div><h6>This is where we put the information</h6></div>
+            <div>
+              <h6>This is where we put the information</h6></div>
           </div>
 
           <div class="media">
@@ -114,12 +146,13 @@
                   <h4 class="media-heading">CASA</h4>
                 </div>
               </a>
-                <img class="media-object" src="http://placehold.it/250" alt="product-250-x-250" width="70px">
+              <img class="media-object" src="http://placehold.it/250" alt="product-250-x-250" width="70px">
             </div>
             <div class="product-details">
               <h5>Product Name</h5>
             </div>
-            <div><h6>This is where we put the information</h6></div>
+            <div>
+              <h6>This is where we put the information</h6></div>
           </div>
         </div>
       </div>
@@ -153,4 +186,5 @@
     <p>COPYRIGHT © 2017 <span>ECOMMERCE</span> CASA ALL RIGHTS RESERVED</p>
   </div>
 </body>
+
 </html>
