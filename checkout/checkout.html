@@ -372,7 +372,7 @@
           <div class="form-group">
             <label for="cardholder-name" class="col-sm-2 control-label col-sm-offset-2">Cardholder's Name</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control input-sm" id="cardholder-name" placeholder="First and last name">
+              <input required type="text" class="form-control input-sm" id="cardholder-name" placeholder="First and last name">
             </div>
           </div>
         </div>
@@ -401,8 +401,8 @@
           <div class="form-group">
             <label for="expiry-month" class="col-sm-2 control-label col-sm-offset-2">Card Expiration Date</label>
             <div class="col-sm-1">
-              <select class="form-control input-sm" name="expiry_month" id="expiry_month">
-                <option>Month</option>
+              <select required class="form-control input-sm" name="expiry_month" id="expiry_month">
+                <option value="">Month</option>
                 <option value="01">Jan (01)</option>
                 <option value="02">Feb (02)</option>
                 <option value="03">Mar (03)</option>
@@ -418,7 +418,8 @@
               </select>
             </div>
             <div class="col-sm-1">
-              <select class="form-control input-sm" name="expiry_year">
+              <select required class="form-control input-sm" name="expiry_year">
+                <option value="">Year</option>
                 <option value="17">2017</option>
                 <option value="18">2018</option>
                 <option value="19">2019</option>
@@ -432,11 +433,11 @@
                 <option value="16">2027</option>
               </select>
             </div>
-            <div class="col-sm-1 cvv-form">
+            <div class="col-sm-1 cvv-field">
               <label for="cvv" class="control-label">CVV</label>
             </div>
             <div class="col-sm-1">
-              <input type="number" class="form-control input-sm" id="cvv" placeholder="CVV">
+              <input required type="number" class="form-control input-sm" id="cvv" placeholder="CVV">
             </div>
           </div>
         </div>
