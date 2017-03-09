@@ -132,14 +132,15 @@ $('#product-container').append(html)
 //FILTER PRODUCTS BY SIZE
 $('[name="size"]').on('click', function() {
     var buttonVal = $(this).val()
-    $(`.col-xs-4`).hide()
-    $(`.col-xs-4[data-size="${buttonVal}"]`).show()
-
-    console.log(buttonVal);
+    console.log($(this).attr('id'));
+    if ($(this).attr('id') === 'none') {
+        $(`.col-xs-4`).show()
+    } else {
+        $(`.col-xs-4`).hide()
+        $(`.col-xs-4[data-size="${buttonVal}"]`).show()
+    }
+    // console.log(buttonVal);
 })
-
-
-
 
 
 
