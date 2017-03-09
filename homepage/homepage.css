@@ -19,6 +19,15 @@ iframe{
   color:silver;
 }
 
+.image-feature{
+
+
+}
+
+.addCartText{
+  display: inline-block;
+}
+
 #slider{
   width: 1440px;
   height: 400px;
@@ -41,4 +50,3 @@ iframe{
 
 #slider img {
   height: 400px;
-}

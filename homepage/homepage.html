@@ -4,21 +4,23 @@
 <head>
   <meta charset="utf-8">
   <title>Homepage</title>
+
+  <!-- STYLE -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" />
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script defer src="homepage.js"></script>
   <link rel="stylesheet" href="homepage.css">
+
+  <!-- SCRIPT -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script defer src="../products/products.js"></script>
+  <script defer src="homepage.js"></script>
+
 </head>
 
 
 <body>
-
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -49,9 +51,13 @@
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="3 Items" />
+              <i class="glyphicon glyphicon-shopping-cart form-control-feedback"></i>
           </div>
-
+            <div class="checkout">
+            </div>
+          </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
@@ -63,7 +69,12 @@
 
 
   <br>
-  <!-- Footer Starts Here -->
+
+<div class="container" id="feature-products">
+  <div class="row" id="feature-row"></div>
+
+
+</div>
 
   <!-- FOOTER STARTS HERE -->
   <footer class="navbar navbar-default">

@@ -42,14 +42,26 @@ $('form.credit-card').on('submit', function(e){
   }
 });
 
-$('.card-inputs').keyup(function () {
-  if ($(this).val().length === 4) {
-    $(this).next().focus();
-  }
-  var $cardNum = $('#card-field-1').val().length + $('#card-field-2').val().length + $('#card-field-3').val().length + $('#card-field-4').val().length;
-  if ($cardNum !== 16){
+$('.card-inputs').focus(function () {
+  var invalidCardFields = $('.card-inputs').filter(function(){
+      return this.value.length !== 4;
+    }).length;
+  if (invalidCardFields !== 0){
+    $('.card-field').removeClass('has-success');
     $('.card-field').addClass('has-error');
   } else {
-    $('.card-field').addClass('has-success')
+    $('.card-field').addClass('has-success');
+  }
+});
+
+$('.card-inputs').keyup(function () {
+  if ($(this).val().length !== 4){
+    $('.card-field').removeClass('has-success');
+    $('.card-field').addClass('has-error');
+  } else {
+      if ($(this).next().length === 0) {
+      $('.card-field').addClass('has-success');
+      }
+    $(this).next().focus();
   }
 });
