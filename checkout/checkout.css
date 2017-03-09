@@ -23,3 +23,9 @@ input[type=number]::-webkit-outer-spin-button {
   float: right;
   font-size: 10px;
 }
+
+.card-inputs {
+  text-align: center;
+  width: 6.5rem;
+  display: inline-block;
+}
