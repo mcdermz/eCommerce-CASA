@@ -19,11 +19,35 @@ iframe{
   color:silver;
 }
 
-.image-feature{
-   
-
+#feature-products{
+  margin-top: 20px;
 }
 
 .addCartText{
   display: inline-block;
 }
+
+#slider{
+  width: 100%;
+  max-width: 1440px;
+  height: 400px;
+  overflow: hidden;
+  padding: 0;
+}
+
+#slider .slides{
+  display: block;
+  width: 12000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  height: 400px;
+}
+
+#slider img {
+  height: 400px;

@@ -62,7 +62,6 @@
     </div>
   </nav>
 
-
   <!-- product checkout -->
   <div class="container">
     <div class="row">
@@ -362,86 +361,92 @@
       </div>
     </div>
 
-  </div>
+
 
   <!-- credit card -->
-  <div class="container">
-    <form class="form-horizontal credit-card">
-      <fieldset>
-        <div class="row">
-          <div class="form-group">
-            <label for="cardholder-name" class="col-sm-2 control-label col-sm-offset-2">Cardholder's Name</label>
-            <div class="col-sm-4">
-              <input required type="text" class="form-control input-sm" id="cardholder-name" placeholder="First and last name">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group card-field">
-            <label for="card-number" class="col-sm-2 control-label col-sm-offset-2">Credit Card Number</label>
-            <div class="col-sm-4">
-              <div class="row">
-                <div class="col-sm-12">
-                  <input type="number" id="card-field-1" class="form-control input-sm card-inputs" placeholder="Card">
-                  <input type="number" id="card-field-2" class="form-control input-sm card-inputs" placeholder="Number">
-                  <input type="number" id="card-field-3" class="form-control input-sm card-inputs" placeholder="Goes">
-                  <input type="number" id="card-field-4" class="form-control input-sm card-inputs" placeholder="Here">
+    <div class="panel panel-default credit-card">
+      <div class="panel-heading">CREDIT CARD</div>
+      <div class="panel-body">
+        <form class="form-horizontal credit-card">
+          <fieldset>
+            <div class="row">
+              <div class="form-group">
+                <label for="cardholder-name" class="col-sm-3 control-label col-sm-offset-1">Cardholder's Name</label>
+                <div class="col-sm-4">
+                  <input required type="text" class="form-control input-sm" id="cardholder-name" placeholder="First and last name">
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <label for="expiry-month" class="col-sm-2 control-label col-sm-offset-2">Card Expiration Date</label>
-            <div class="col-sm-1">
-              <select required class="form-control input-sm" name="expiry_month" id="expiry_month">
-                <option value="">Month</option>
-                <option value="01">Jan (01)</option>
-                <option value="02">Feb (02)</option>
-                <option value="03">Mar (03)</option>
-                <option value="04">Apr (04)</option>
-                <option value="05">May (05)</option>
-                <option value="06">June (06)</option>
-                <option value="07">July (07)</option>
-                <option value="08">Aug (08)</option>
-                <option value="09">Sep (09)</option>
-                <option value="10">Oct (10)</option>1
-                <option value="11">Nov (11)</option>
-                <option value="12">Dec (12)</option>
-              </select>
+            <div class="row">
+              <div class="form-group card-field">
+                <label for="card-number" class="col-sm-3 control-label col-sm-offset-1">Credit Card Number</label>
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input type="number" id="card-field-1" class="form-control input-sm card-inputs" placeholder="Card">
+                      <input type="number" id="card-field-2" class="form-control input-sm card-inputs" placeholder="Number">
+                      <input type="number" id="card-field-3" class="form-control input-sm card-inputs" placeholder="Goes">
+                      <input type="number" id="card-field-4" class="form-control input-sm card-inputs" placeholder="Here">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-1">
-              <select required class="form-control input-sm" name="expiry_year">
-                <option value="">Year</option>
-                <option value="17">2017</option>
-                <option value="18">2018</option>
-                <option value="19">2019</option>
-                <option value="20">2020</option>
-                <option value="21">2021</option>
-                <option value="22">2022</option>
-                <option value="23">2023</option>
-                <option value="13">2024</option>
-                <option value="14">2025</option>
-                <option value="15">2026</option>
-                <option value="16">2027</option>
-              </select>
+            <div class="row">
+              <div class="form-group">
+
+                <label for="expiry-month" class="col-sm-3 control-label col-sm-offset-1">Card Expiration Date</label>
+
+                <div class="col-sm-2">
+                  <select required class="form-control input-sm" name="expiry_month" id="expiry_month">
+                    <option value="">Month</option>
+                    <option value="01">Jan (01)</option>
+                    <option value="02">Feb (02)</option>
+                    <option value="03">Mar (03)</option>
+                    <option value="04">Apr (04)</option>
+                    <option value="05">May (05)</option>
+                    <option value="06">June (06)</option>
+                    <option value="07">July (07)</option>
+                    <option value="08">Aug (08)</option>
+                    <option value="09">Sep (09)</option>
+                    <option value="10">Oct (10)</option>1
+                    <option value="11">Nov (11)</option>
+                    <option value="12">Dec (12)</option>
+                  </select>
+                  <select required class="form-control input-sm" name="expiry_year">
+                    <option value="">Year</option>
+                    <option value="17">2017</option>
+                    <option value="18">2018</option>
+                    <option value="19">2019</option>
+                    <option value="20">2020</option>
+                    <option value="21">2021</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="13">2024</option>
+                    <option value="14">2025</option>
+                    <option value="15">2026</option>
+                    <option value="16">2027</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="row cvv-field">
+                    <label for="cvv" class="col-sm-6 control-label">CVV</label>
+
+                    <input required type="number" class="col-sm-6 form-control input-sm" id="cvv" placeholder="CVV">
+                  </div>
+                </div>
+
+                <div class="col-sm-1">
+                  <button type="submit" class="btn btn-primary">PURCHASE</button>
+                </div>
+
+              </div>
             </div>
-            <div class="col-sm-1 cvv-field">
-              <label for="cvv" class="control-label">CVV</label>
-            </div>
-            <div class="col-sm-1">
-              <input required type="number" class="form-control input-sm" id="cvv" placeholder="CVV">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 col-sm-offset-6">
-            <button type="submit" class="btn btn-primary">PURCHASE</button>
-          </div>
-        </div>
-      </fieldset>
-    </form>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 
