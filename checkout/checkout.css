@@ -13,6 +13,4 @@ input[type=number]::-webkit-outer-spin-button {
 .same-as-shipping{
   float: right;
   font-size: 10px;
-  /*margin-left: 42%;*/
-
 }
