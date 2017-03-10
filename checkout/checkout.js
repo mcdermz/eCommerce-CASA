@@ -36,8 +36,12 @@ $('form.credit-card').on('submit', function(e){
   e.preventDefault();
   var $cvv = $('#cvv').val().length;
   if ($cvv !== 3) {
+    $('.cvv-field').removeClass('has-success')
     $('.cvv-field').addClass('has-error');
-  }else {
+  } else if (!$('.card-field').hasClass('has-success')){
+    $('.card-field').addClass('has-error');
+  }
+  else {
     $('.credit-card').addClass('has-success');
   }
 });
