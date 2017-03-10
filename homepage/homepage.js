@@ -37,27 +37,36 @@ var featureCol = []
 // carousel
 $(function(){
   var $slider = $('#slider .slides');
-  var currentSlide = 1;
+  var currentSlide = 0;
   var animateSpeed = 1000;
-  var pause = 6000;
+  var pause = 4000;
   function caroselMove(next){
     if (next){
       $slider.animate({'margin-left': '-=1440'}, animateSpeed, function(){
-        currentSlide++;
+        ++currentSlide;
         if(currentSlide === $('.slide').length){
-          currentSlide = 1;
+          currentSlide = 0;
           $slider.css('margin-left', 0);
         }
       })
     } else {
-      $slider.animate({'margin-right': '+=1440'}, animateSpeed, function(){
-        currentSlide--;
-        if(currentSlide === 0){
-          currentSlide = $('.slide').length;
-          $slider.css('margin-right', 0);
+      $slider.animate({'margin-left': '+=1440'}, animateSpeed, function(){
+        --currentSlide;
+        if(currentSlide === -1){
+          currentSlide = $('.slide').length-1;
+          $slider.css('margin-left', '-=8640');
         }
       })
     }
+  }
+
+
+
+  function resetTimer(){
+    let timer = setInterval(function(){
+      caroselMove(next)
+    }, pause);
+    clearInterval(timer);
   }
 
   setInterval(function(){
@@ -68,11 +77,12 @@ $(function(){
     if ($(this).attr('id') === 'next'){
       let next = true;
       caroselMove(next);
+      resetTimer();
     }
     if ($(this).attr('id') === 'prev'){
-      let next = false;
-      caroselMove(next);
+      let prev = false;
+      caroselMove(prev);
+      resetTimer();
     }
   });
-  // arrow keys
 });
