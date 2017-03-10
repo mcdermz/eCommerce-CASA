@@ -37,7 +37,7 @@ $(function(){
   var $slider = $('#slider .slides');
   var currentSlide = 0;
   var animateSpeed = 1000;
-  var pause = 6000;
+  var pause = 4000;
   function caroselMove(next){
     if (next){
       $slider.animate({'margin-left': '-=1440'}, animateSpeed, function(){
@@ -58,18 +58,29 @@ $(function(){
     }
   }
 
-  // setInterval(function(){
-  //   caroselMove(next)
-  // }, pause);
+
+
+  function resetTimer(){
+    let timer = setInterval(function(){
+      caroselMove(next)
+    }, pause);
+    clearInterval(timer);
+  }
+
+  setInterval(function(){
+    caroselMove(next)
+  }, pause);
 
   $('aside a').on('click', function(){
     if ($(this).attr('id') === 'next'){
       let next = true;
       caroselMove(next);
+      resetTimer();
     }
     if ($(this).attr('id') === 'prev'){
       let prev = false;
       caroselMove(prev);
+      resetTimer();
     }
   });
 });
