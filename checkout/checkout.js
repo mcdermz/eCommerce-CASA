@@ -7,6 +7,7 @@ $('form.shipping').on('submit', function(e){
     $('.zip-ship').addClass('has-error');
   }else if($('#zipCode-ship').val().length === 5 || $('#zipCode-ship').val().length === 9){
     $('.zip-ship').removeClass('has-error');
+    $('form.shipping').addClass('has-success');
   }
 
   if ($( "input[type='checkbox']" ).is(':checked')){
@@ -28,6 +29,7 @@ $('form.billing').on('submit', function(e){
     $('.zip-bill').addClass('has-error');
   }else if($('#zipCode-bill').val().length === 5 || $('#zipCode-bill').val().length === 9){
     $('.zip-bill').removeClass('has-error');
+    $('form.billing').addClass('has-success');
   }
 });
 
@@ -36,8 +38,12 @@ $('form.credit-card').on('submit', function(e){
   e.preventDefault();
   var $cvv = $('#cvv').val().length;
   if ($cvv !== 3) {
+    $('.cvv-field').removeClass('has-success')
     $('.cvv-field').addClass('has-error');
-  }else {
+  } else if (!$('.card-field').hasClass('has-success')){
+    $('.card-field').addClass('has-error');
+  }
+  else {
     $('.credit-card').addClass('has-success');
   }
 });
