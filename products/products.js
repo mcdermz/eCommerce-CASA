@@ -102,44 +102,58 @@ var picture = `<img src="http://fillmurray.com/300/300" alt="Mother-F*ckin' Bill
 var rowOpen = `<div class="row">`
 var divClose = `</div>`
 var br = `</br>`
+var clearFixMd = `<div class="clearfix active-md"></div>`
+// var clearFixSm = `<div class="clearfix active-sm"></div>`
 
 //CREATES ARRAY OF PRODUCTS; EACH ITEM IN ARRAY CONTAINS AN HTML FRIENDLY STRING OF A PRODUCT IN A COLUMN
 var arrOfCol = []
 for (var i = 0; i < products.length; i++) {
-    var colOpen = `<div data-size="${products[i].size}" class="col-xs-4">`
-    arrOfCol.push(colOpen + br + picture + `<p>Price: ${products[i].price}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
+    var colOpen = `<div data-identification="${products[i].id}" data-size="${products[i].size}" class="col-md-4 col-sm-6 col-xs-8">`
+
+    arrOfCol.push(colOpen + br + picture + `<p>ID: ${products[i].id}` + `<p>Price: ${products[i].price}</p>` + `<p>Size: ${products[i].size}</p>` + `<p>Description: ${products[i].description}</p>` + divClose)
 }
 
 //LOOPS THROUGH ARRAY OF COLUMNS AND ADDS THEM ONTO ROWS
 var html = rowOpen
+
 for (var i = 0; i < arrOfCol.length; i++) {
     var col = arrOfCol[i]
-    html += col
-
-    //IF ROW IS FULL (WITH 3 COLUMNS IN IT) THEN CLOSE ROW AND CREATE A NEW ONE
-    if (i % 3 === 2) {
-        html += divClose
-        if (i !== arrOfCol.length - 1) {
-            html += rowOpen
-        } else {
-            html += divClose
-        }
+    if (col === arrOfCol[2]) {
+        html += col += clearFixMd
+    } else if (col === arrOfCol[8]) {
+        html += col += clearFixMd
+    // } else if (col === arrOfCol[7]) {
+    //   html += col += clearFixSm
+    } else {
+        html += col
     }
 }
+html += divClose += divClose;
+// console.log(html);
+
+//IF ROW IS FULL (WITH 3 COLUMNS IN IT) THEN CLOSE ROW AND CREATE A NEW ONE
+//     if (i % 3 === 2) {
+//         html += divClose
+//         if (i !== arrOfCol.length - 1) {
+//             html += rowOpen
+//         } else {
+//             html += divClose
+//         }
+//     }
+// }
 //APPEND PRODUCTS INTO HTML
 $('#product-container').append(html)
 
 //FILTER PRODUCTS BY SIZE
 $('[name="size"]').on('click', function() {
     var buttonVal = $(this).val()
-    console.log($(this).attr('id'));
     if ($(this).attr('id') === 'none') {
-        $(`.col-xs-4`).show()
+        $(`.col-md-4, .col-sm-6, .col-xs-8`).show()
     } else {
-        $(`.col-xs-4`).hide()
-        $(`.col-xs-4[data-size="${buttonVal}"]`).show()
+        $(`.col-md-4, .col-sm-6, .col-xs-8`).hide()
+        $(`.col-md-4[data-size="${buttonVal}"], .col-sm-6[data-size="${buttonVal}"], .col-xs-8[data-size="${buttonVal}"]`).show()
     }
-    // console.log(buttonVal);
+    console.log(this, `.col-md-4, .col-sm-6, .col-xs-8[data-size="${buttonVal}"]`);
 })
 
 
