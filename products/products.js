@@ -1,4 +1,3 @@
-console.log("sanity!");
 //ARRAY OF PRODUCTS
 var products = [{
         "id": 1,
@@ -103,7 +102,6 @@ var rowOpen = `<div class="row">`
 var divClose = `</div>`
 var br = `</br>`
 var clearFixMd = `<div class="clearfix active-md"></div>`
-// var clearFixSm = `<div class="clearfix active-sm"></div>`
 
 //CREATES ARRAY OF PRODUCTS; EACH ITEM IN ARRAY CONTAINS AN HTML FRIENDLY STRING OF A PRODUCT IN A COLUMN
 var arrOfCol = []
@@ -122,25 +120,13 @@ for (var i = 0; i < arrOfCol.length; i++) {
         html += col += clearFixMd
     } else if (col === arrOfCol[8]) {
         html += col += clearFixMd
-    // } else if (col === arrOfCol[7]) {
-    //   html += col += clearFixSm
     } else {
         html += col
     }
 }
 html += divClose += divClose;
-// console.log(html);
 
-//IF ROW IS FULL (WITH 3 COLUMNS IN IT) THEN CLOSE ROW AND CREATE A NEW ONE
-//     if (i % 3 === 2) {
-//         html += divClose
-//         if (i !== arrOfCol.length - 1) {
-//             html += rowOpen
-//         } else {
-//             html += divClose
-//         }
-//     }
-// }
+
 //APPEND PRODUCTS INTO HTML
 $('#product-container').append(html)
 
@@ -155,13 +141,3 @@ $('[name="size"]').on('click', function() {
     }
     console.log(this, `.col-md-4, .col-sm-6, .col-xs-8[data-size="${buttonVal}"]`);
 })
-
-
-
-
-
-
-
-
-
-//
