@@ -18,19 +18,19 @@ var addCartText= `<a href="#" class="btn addCartText" style="display:none">Add C
 
 
 var featureCol = []
-  for (var i = 0; i < products.length; i++) {
-    featureCol.push(colOpenTag + imgFeature + addCartText + `<p> ${products[i].id}</p>` + `<p> ${products[i].ratings}</p>` + `<p> ${products[i].price}</p>` + `</div>`);
-  }
+for (var i = 0; i < products.length; i++) {
+  featureCol.push(colOpenTag + imgFeature + addCartText + `<p> ${products[i].id}</p>` + `<p> ${products[i].ratings}</p>` + `<p> ${products[i].price}</p>` + `</div>`);
+}
 
-  $('.image-feature').hover(function(){
-    $(this).addClass('image-feature');
-    $(this).siblings('.addCartText').addClass('display', 'block');
-    $(this).siblings('.addCartText').show();
+$('.image-feature').hover(function(){
+  $(this).addClass('image-feature');
+  $(this).siblings('.addCartText').addClass('display', 'block');
+  $(this).siblings('.addCartText').show();
 
-  }, function(){
-    $(this).removeClass('image-feature');
-    $(this).siblings('.addCartText').hide();
-  })
+}, function(){
+  $(this).removeClass('image-feature');
+  $(this).siblings('.addCartText').hide();
+});
 
 // carousel
 $(function(){
